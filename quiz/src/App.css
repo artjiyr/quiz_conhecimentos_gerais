@@ -1,0 +1,20 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 20px;
+  padding: 30px;
+}
+
+h1{
+  font-size: clamp(30px, 1vw, 5vw);
+  text-align: center;
+}
