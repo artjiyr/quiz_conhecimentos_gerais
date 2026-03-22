@@ -1,9 +1,25 @@
-import React from 'react'
+// src/components/Question.tsx
+import { useContext } from "react";
+import { QuizContext } from "../context/quiz";
 
 const Question = () => {
-  return (
-    <div>Question</div>
-  )
-}
+  const context = useContext(QuizContext);
+  if (!context) return null;
 
-export default Question
+  const [quizState] = context;
+
+  const question = quizState.questions[0]; // pega a primeira questão só para teste
+
+  return (
+    <div>
+      <h2>{question.question}</h2>
+      <ul>
+        {question.answers.map((a, index) => (
+          <li key={index}>{a.text}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default Question;
